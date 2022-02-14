@@ -55,7 +55,7 @@ export const AuthContextProvider = ({ children }: AuthProviderProps) => {
 
                setUser(responseFormatted)
 
-               console.log({ responseFormatted, user })
+               
           }
 
           loadData()
@@ -68,7 +68,7 @@ export const AuthContextProvider = ({ children }: AuthProviderProps) => {
 
                setUser(googleUser)
 
-               console.log({ user, googleUser })
+               
           } catch (error) {
                console.log(error)
           }
@@ -79,13 +79,13 @@ export const AuthContextProvider = ({ children }: AuthProviderProps) => {
                const SCOPE = encodeURI('profile email') // trocar os espacos por algo compreensivel
                const authUrl = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${process.env.CLIENT_ID}&redirect_uri=${process.env.REDIRECT_URI}&response_type=${process.env.RESPONSE_TYPE}&scope=${SCOPE}`
 
-               console.log({ authUrl })
+               
 
                const { type, params } = (await AuthSession.startAsync({
                     authUrl,
                })) as AuthorizationResponse
 
-               console.log({ type, params })
+               
 
                if (type === 'success') {
                     const response = await fetch(
@@ -94,7 +94,7 @@ export const AuthContextProvider = ({ children }: AuthProviderProps) => {
 
                     const userInfo = await response.json()
 
-                    console.log({ userInfo })
+                    
 
                     const googleUser = {
                          id: userInfo.id,

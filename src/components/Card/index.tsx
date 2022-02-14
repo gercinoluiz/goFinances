@@ -1,4 +1,5 @@
 import React from 'react'
+import { ViewProps } from 'react-native'
 import {
      Container,
      Header,
@@ -9,7 +10,7 @@ import {
      LastTransaction,
 } from './styles'
 
-export interface CardProps {
+export interface CardProps extends ViewProps {
 
      
           name: string
@@ -28,7 +29,7 @@ const icon = {
 
 const Card = ({amount, lastTransaction, name, type}:CardProps) => {
      return (
-          <Container type={type}>
+          <Container type={type} testID='amount-card'>
                <Header>
                     <Title type={type}>{name}</Title>
                     <Icon name={icon[type]} type={type} ></Icon>
