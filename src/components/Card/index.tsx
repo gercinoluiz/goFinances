@@ -1,5 +1,6 @@
 import React from 'react'
-import { ViewProps } from 'react-native'
+import { ViewProps, Text } from 'react-native'
+import { useTheme } from 'styled-components'
 import {
      Container,
      Header,
@@ -28,9 +29,12 @@ const icon = {
 }
 
 const Card = ({amount, lastTransaction, name, type}:CardProps) => {
+     const theme = useTheme()
+
      return (
           <Container type={type} testID='amount-card'>
                <Header>
+                    <Text style={{color:theme.colors.atention}}> Hello</Text>
                     <Title type={type}>{name}</Title>
                     <Icon name={icon[type]} type={type} ></Icon>
                </Header>

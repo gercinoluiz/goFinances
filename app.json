@@ -25,6 +25,9 @@
     },
     "android": {
       "package": "com.gercino_luiz.gofinances"
+    },
+    "ios": {
+      "bundleIdentifier": "gfinances"
     }
   },
   "name": "gofinances"
